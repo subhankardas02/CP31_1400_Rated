@@ -7,28 +7,41 @@ using namespace std;
 int main() {
 
 
-	ll n, m, k;
-	cin>>n>>m>>k;
-	
-	vector<ll> vec;
-	ll last;
-	cin>>last;
-    for(int i=0; i<n-1; i++){
-		ll val;
-		cin>>val;
-		vec.push_back(abs(last-val)-1);
-		last=val;
-	}
-	sort(vec.begin(), vec.end());
-	if(k>=n) cout<<n<<endl;
-	else{
-		ll ans=n;
-		for(int i=0; i<n-k; i++){
-			ans=ans+vec[i];
+	ll t;
+	cin>>t;
+	while(t--){
+		ll n;
+		cin>>n;
+		vector<ll> vec;
+		for(int i=0; i<n; i++){
+			ll val;
+			cin>>val;
+			vec.push_back(val);
 		}
-		cout<<ans<<endl;
+		// vector<ll> ans;
+		ll count=0;
+		stack<ll> s1;
+		for(int i=0; i<n; i++){
+			stack<ll> s;
+			while((!s1.empty()) && (s1.top()-vec[i])>1){
+				s.push(s1.top());
+				s1.pop();
+				count++;
+			}
+			s.push(vec[i]);
+			while(!s.empty()){
+				s1.push(s.top());
+				s.pop();
+			}
+		}
+		
+		cout<<count<<endl;
+
+
 
 	}
+	
+	
 
 	
 
