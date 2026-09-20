@@ -37,7 +37,6 @@ int main() {
 		
 		cout<<count<<endl;
 
-// slk
 	}
 	
 	
