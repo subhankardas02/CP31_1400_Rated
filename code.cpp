@@ -7,8 +7,8 @@ using namespace std;
 int main() {
 
 
-	ll t;
-	cin>>t;
+	ll t=1;
+	// cin>>t;
 	while(t--){
 		ll n;
 		cin>>n;
@@ -16,26 +16,14 @@ int main() {
 		for(int i=0; i<n; i++){
 			ll val;
 			cin>>val;
+			if(val==0) continue;
 			vec.push_back(val);
 		}
-		// vector<ll> ans;
-		ll count=0;
-		stack<ll> s1;
-		for(int i=0; i<n; i++){
-			stack<ll> s;
-			while((!s1.empty()) && (s1.top()-vec[i])>1){
-				s.push(s1.top());
-				s1.pop();
-				count++;
-			}
-			s.push(vec[i]);
-			while(!s.empty()){
-				s1.push(s.top());
-				s.pop();
-			}
-		}
-		
-		cout<<count<<endl;
+		n=vec.size();
+		ll ans=0;
+		vector<bool> vis(n, false);
+		if(vec.size())
+
 
 	}
 	
