@@ -40,7 +40,7 @@ int main() {
 
 		if(poss) cout<<"YES"<<endl;
 		else cout<<"NO"<<endl;
-		
+		// 
 
 
 	}
